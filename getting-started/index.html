@@ -74,6 +74,33 @@
                     </li>
                 
                 
+                
+                    <li >
+                        <a href="../about/">hifiveとは</a>
+                    </li>
+                
+                
+                
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">チュートリアル <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                        
+                            
+<li >
+    <a href="../tutorials/">目次</a>
+</li>
+
+                        
+                            
+<li >
+    <a href="../tutorials/controller/">コントローラ</a>
+</li>
+
+                        
+                        </ul>
+                    </li>
+                
+                
                 </ul>
 
             <ul class="nav navbar-nav navbar-right">
@@ -87,8 +114,8 @@
                             <i class="fa fa-arrow-left"></i> Previous
                         </a>
                     </li>
-                    <li class="disabled">
-                        <a rel="prev" >
+                    <li >
+                        <a rel="prev" href="../about/">
                             Next <i class="fa fa-arrow-right"></i>
                         </a>
                     </li>
@@ -102,11 +129,112 @@
         <div class="col-md-3"><div class="bs-sidebar hidden-print affix well" role="complementary">
     <ul class="nav bs-sidenav">
         <li class="first-level active"><a href="#hifive">hifive入門</a></li>
+            <li class="second-level"><a href="#_1">インストール</a></li>
+                
+                <li class="third-level"><a href="#bower">Bowerを使った方法</a></li>
+                <li class="third-level"><a href="#zip">Zipダウンロード</a></li>
+                <li class="third-level"><a href="#cdn">CDN版</a></li>
+            <li class="second-level"><a href="#_2">はじめてみる</a></li>
+                
+            <li class="second-level"><a href="#html">HTMLのテンプレート</a></li>
+                
+            <li class="second-level"><a href="#jsfiddle">JSFiddleで体験する</a></li>
+                
+        <li class="first-level "><a href="#_3">次のステップ</a></li>
     </ul>
 </div></div>
         <div class="col-md-9" role="main">
 
-<h1 id="hifive">hifive入門</h1></div>
+<h1 id="hifive">hifive入門</h1>
+<h2 id="_1">インストール</h2>
+<p>hifiveをインストールする方法は主に3種類用意されています。</p>
+<h3 id="bower">Bowerを使った方法</h3>
+<p>下記のコマンドでインストールできます。</p>
+<pre><code class="sh">$ bower install hifive
+</code></pre>
+
+<h3 id="zip">Zipダウンロード</h3>
+<p><a href="https://www.htmlhifive.com/conts/web/view/download/hifive">hifive公式サイト</a>よりダウンロードできます。</p>
+<h3 id="cdn">CDN版</h3>
+<p>CDNでホスティングされているJavaScript/CSSファイルを読み込む方法です。本サービスは予告なく改変、停止する場合がありますので本番利用は控えてください。</p>
+<pre><code class="html">&lt;link href=&quot;//code.htmlhifive.com/h5.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;script src=&quot;//code.htmlhifive.com/ejs-h5mod.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//code.htmlhifive.com/h5.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<p>開発用メッセージを確認できるのは下記になります。</p>
+<pre><code class="html">&lt;link href=&quot;//code.htmlhifive.com/h5.css&quot; rel=&quot;stylesheet&quot;&gt;
+
+&lt;script src=&quot;//code.htmlhifive.com/ejs-h5mod.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;//code.htmlhifive.com/h5.dev.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+
+<h2 id="_2">はじめてみる</h2>
+<p><a href="../base.zip">こちらのZipファイル</a>をダウンロードしてください。内容は以下のようになっています。</p>
+<pre><code>$ tree .
+.
+├── index.html
+└── js
+    └── app.js
+
+1 directory, 2 files
+</code></pre>
+
+<h2 id="html">HTMLのテンプレート</h2>
+<p>ごく基本的なHTMLテンプレートになります。</p>
+<pre><code class="html">&lt;!doctype html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;!-- hifiveスタイルシートの読み込み --&gt;
+    &lt;link href=&quot;//code.htmlhifive.com/h5.css&quot; rel=&quot;stylesheet&quot;&gt;
+    &lt;!-- jQueryの読み込み。IE8以下の場合は1.xを、それ以外の場合は2.xを読み込む --&gt;
+    &lt;!--[if lt IE 9]&gt;
+    &lt;script src=&quot;//code.jquery.com/jquery-1.11.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;![endif]--&gt;
+    &lt;!--[if gte IE 9]&gt;&lt;!--&gt;
+    &lt;script src=&quot;//code.jquery.com/jquery-3.2.1.min.js&quot;&gt;&lt;/script&gt;
+    &lt;!--&lt;![endif]--&gt;
+    &lt;!-- hifiveフレームワークの読み込み --&gt;
+    &lt;script src=&quot;//code.htmlhifive.com/ejs-h5mod.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;//code.htmlhifive.com/h5.dev.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;/js/app.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div id=&quot;container&quot;&gt;
+      &lt;input type=&quot;button&quot; id=&quot;btn&quot; value=&quot;ボタンを押してください！&quot; /&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>JavaScriptファイルは次のようになっています。</p>
+<pre><code>$(() {
+  // hifiveのコントローラ。JavaScriptのオブジェクトとして定義します
+  const helloWorldController = {
+    // コントローラ名。 __name で定義します。
+    __name: 'HelloWorldController',
+    // イベント。 &quot;[CSSセレクタ] [イベント]&quot; で呼び出されます
+    '#btn click'() {
+      alert('hifiveの世界へようこそ！');
+    }
+  };
+  // JavaScriptをhifiveのコントローラ化します
+  h5.core.controller('#container', helloWorldController);
+});
+</code></pre>
+
+<p><code>h5.core.controller</code> では第一引数にコントローラをバインドさせる要素を指定します（今回の場合は #container 以下で利用します）。</p>
+<p>これを簡易的な HTTPサーバ化で動作させます。トップページにアクセスすると、以下のようにボタンが表示されるはずです。</p>
+<p>そしてボタンを押すと <strong>hifiveの世界へようこそ！</strong> というアラートが表示されます。</p>
+<p>これが hifive の基本です。</p>
+<h2 id="jsfiddle">JSFiddleで体験する</h2>
+<p>上記内容はこちらでも試せます。</p>
+<script async src="//jsfiddle.net/qfun9osL/4/embed/result,js,html/"></script>
+
+<h1 id="_3">次のステップ</h1>
+<p>次に<a href="../about">hifiveについて、また要件について学びましょう</a>。</p></div>
         
     </div>
 
