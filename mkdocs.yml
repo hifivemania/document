@@ -1,5 +1,10 @@
+
 site_name: hifive API document
 theme: cinder
 pages:
   - Home: index.md
   - Getting Started: getting-started.md
+  - hifiveとは: about.md
+  - チュートリアル:
+    - 目次: tutorials/index.md
+    - コントローラ: tutorials/controller.md

@@ -11,7 +11,7 @@
 
 ## まずは使ってみよう
 
-<script async src="//jsfiddle.net/qfun9osL/2/embed/js,html,result/"></script>
+<script async src="//jsfiddle.net/qfun9osL/4/embed/js,html,result/"></script>
 
 ## hifiveをはじめてみる
 
